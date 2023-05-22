@@ -1,0 +1,23 @@
+prototype(NeosRulez.Neos.Form.EmailFinisher:Finisher.EmailFinisher.Definition) < prototype(Neos.Form.Builder:Finisher.Definition) {
+    formElementType = 'NeosRulez.Neos.Form.EmailFinisher:EmailFinisher'
+
+    options {
+        subject = ${null}
+        recipientAddress = ${null}
+        recipientName = ''
+        senderAddress = ${null}
+        senderName = ''
+        replyToAddress = ${null}
+        carbonCopyAddress = ${null}
+        blindCarbonCopyAddress = ${null}
+        format = 'html'
+        testMode = ${false}
+
+        templatePathAndFilename = ${null}
+        partialRootPath = ${null}
+        layoutRootPath = ${null}
+        variables = ${null}
+
+        assets = ${null}
+    }
+}

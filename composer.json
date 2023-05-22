@@ -1,0 +1,19 @@
+{
+    "description": "An advanced email finisher that sends selected attachments with a confirmation email.",
+    "type": "neos-package",
+    "name": "neosrulez/neos-form-emailfinisher",
+    "require": {
+        "neos/neos": "^7.0 || ^8.0 || ^8.1 || ^8.2 || ^8.3",
+        "neos/form-builder": "^2.2 || ^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "NeosRulez\\Neos\\Form\\EmailFinisher\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "NeosRulez.Neos.Form.EmailFinisher"
+        }
+    }
+}

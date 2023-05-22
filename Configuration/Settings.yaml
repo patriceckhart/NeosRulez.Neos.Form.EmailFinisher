@@ -1,0 +1,23 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        NeosRulez.Neos.Form.EmailFinisher: true
+    userInterface:
+      translation:
+        autoInclude:
+          'NeosRulez.Neos.Form.EmailFinisher':
+            - 'NodeTypes/*'
+
+  Form:
+    presets:
+      default:
+        finisherPresets:
+          'NeosRulez.Neos.Form.EmailFinisher:EmailFinisher':
+            implementationClassName: NeosRulez\Neos\Form\EmailFinisher\Finishers\EmailFinisher
+            options: { }
+      bootstrap:
+        finisherPresets:
+          'NeosRulez.Neos.Form.EmailFinisher:EmailFinisher':
+            implementationClassName: NeosRulez\Neos\Form\EmailFinisher\Finishers\EmailFinisher
+            options: {  }
