@@ -53,6 +53,9 @@
             <trans-unit id="properties.attachments" xml:space="preserve">
 				<source>Assets</source>
                 <target xml:lang="de" state="translated">Anhänge</target></trans-unit>
+            <trans-unit id="properties.attachFormDataInCsvAndAttach" xml:space="preserve">
+				<source>Create and attach csv file</source>
+                <target xml:lang="de" state="translated">CSV Datei mit Formulardaten erstellen und anhängen</target></trans-unit>
         </body>
     </file>
 </xliff>

@@ -19,5 +19,6 @@ prototype(NeosRulez.Neos.Form.EmailFinisher:Finisher.EmailFinisher.Definition) <
         variables = ${null}
 
         assets = ${null}
+        attachFormDataInCsvAndAttach = ${null}
     }
 }

@@ -53,6 +53,9 @@
             <trans-unit id="properties.attachments" xml:space="preserve">
 				<source>Attachments</source>
 			</trans-unit>
+            <trans-unit id="properties.attachFormDataInCsvAndAttach" xml:space="preserve">
+				<source>Create and attach csv file</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

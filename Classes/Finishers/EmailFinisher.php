@@ -15,6 +15,7 @@ use Neos\Utility\Arrays;
 use Neos\Utility\ObjectAccess;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\ResourceManagement\ResourceManager;
+use NeosRulez\Neos\Form\EmailFinisher\Factory\StructuredDataFactory;
 
 /**
  * This finisher sends an email to one or more recipients
@@ -69,6 +70,12 @@ class EmailFinisher extends AbstractFinisher
      * @Flow\Inject
      */
     protected $i18nService;
+
+    /**
+     * @Flow\Inject
+     * @var StructuredDataFactory
+     */
+    protected $structuredDataFactory;
 
     protected $formatContentTypes = [
         self::FORMAT_HTML => self::CONTENT_TYPE_HTML,
@@ -150,6 +157,7 @@ class EmailFinisher extends AbstractFinisher
 
         $this->addMessages($mail, $messages);
         $this->addAttachments($mail);
+        $this->addStructuredData($mail);
 
         if ($testMode === true) {
             \Neos\Flow\var_dump(
@@ -293,4 +301,19 @@ class EmailFinisher extends AbstractFinisher
             }
         }
     }
+
+    /**
+     * @param SwiftMailerMessage $mail
+     * @return void
+     * @throws FinisherException
+     */
+    protected function addStructuredData(SwiftMailerMessage $mail)
+    {
+        if($this->parseOption('attachFormDataInCsvAndAttach')) {
+            $formValues = $this->finisherContext->getFormValues();
+            $csvContent = $this->structuredDataFactory->getCsvString($formValues);
+            $mail->attach(new \Swift_Attachment($csvContent, (time() . '.csv'), 'text/csv'));
+        }
+    }
+
 }

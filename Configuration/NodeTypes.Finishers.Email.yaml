@@ -29,7 +29,7 @@
               relNofollow: true
               targetBlank: true
             formatting:
-              placeholderInsert: true
+              placeholderInsert: false
               h1: true
               h2: true
               h3: true
@@ -48,6 +48,14 @@
         inspector:
           group: 'finisher'
           position: after templateSource
+    'attachFormDataInCsvAndAttach':
+      type: boolean
+      defaultValue: false
+      ui:
+        label: i18n
+        inspector:
+          group: 'finisher'
+          position: after attachments
     'recipientAddress':
       type: string
       ui:
