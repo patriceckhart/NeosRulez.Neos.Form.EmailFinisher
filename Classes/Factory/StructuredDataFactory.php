@@ -22,6 +22,8 @@ class StructuredDataFactory
                 $formValue = $formValue->getFilename();
             } else if(is_array($formValue)) {
                 $formValue = implode(',', $formValue);
+            } else if($formValue instanceof \DateTime) {
+                $formValue = $formValue->format('Y-m-d H:i:s');
             }
             fputcsv($csvFile, [$formValueKey, $formValue]);
         }
