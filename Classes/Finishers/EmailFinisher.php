@@ -311,7 +311,7 @@ class EmailFinisher extends AbstractFinisher
     {
         if($this->parseOption('attachFormDataInCsvAndAttach')) {
             $formValues = $this->finisherContext->getFormValues();
-            $csvContent = $this->structuredDataFactory->getCsvString($formValues);
+            $csvContent = $this->structuredDataFactory->getCsvString($formValues, $this->finisherContext->getFormRuntime()->getFormDefinition());
             $mail->attach(new \Swift_Attachment($csvContent, (time() . '.csv'), 'text/csv'));
         }
     }
