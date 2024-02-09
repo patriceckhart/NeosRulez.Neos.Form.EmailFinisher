@@ -207,6 +207,9 @@ class EmailFinisher extends AbstractFinisher
     {
         $formRuntime = $this->finisherContext->getFormRuntime();
         $standaloneView = $this->initializeStandaloneView($format);
+        if($this->options['useFluidTemplate'] === true) {
+            $standaloneView->setTemplateSource($this->options['fluidTemplate']);
+        }
         $standaloneView->assign('form', $formRuntime);
         $referrer = $formRuntime->getRequest()->getHttpRequest()->getUri();
         $standaloneView->assign('referrer', $referrer);
